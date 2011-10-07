@@ -1,0 +1,23 @@
+#!/bin/bash
+#set -x
+TEMP=`mktemp -t xxx.temp` || exit 1
+
+cat >> $TEMP <<EOF
+screenrc $HOME/.screenrc
+bash_profile $HOME/.bash_profile
+bashrc_prasanna $HOME/.bashrc_prasanna
+EOF
+
+
+setup ()
+{
+  if [ $# -ne 2]; then
+    exit 65;
+  fi
+  ln -s $1 $2
+}
+
+while read line 
+do
+  ln -s $line
+done < $TEMP
