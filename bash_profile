@@ -5,3 +5,4 @@ export PATH=$HOME/bin:/usr/local/play-1.2.3:usr/local/bin:/usr/local/share/pytho
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 source /usr/local/share/python/virtualenvwrapper.sh
 source $HOME/.bashrc_prasanna
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
