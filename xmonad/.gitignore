@@ -1,0 +1,9 @@
+dist
+cabal-dev
+*.o
+*.hi
+*.chi
+*.chs.h
+.virthualenv
+*.errors
+xmonad-x86_64-linux

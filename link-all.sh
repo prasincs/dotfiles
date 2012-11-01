@@ -2,7 +2,7 @@
 DIR=$(cd $(dirname $0) && pwd )
 
 function check_arg_num {
-  if [ $1 -ne $2 ]; then
+  if [ ! "$1" = "$2" ]; then
     echo "Need 2 args";
     exit
   fi
@@ -30,3 +30,7 @@ function link_dir {
 
 link_file zsh/zshrc $HOME/.zshrc
 link_dir xmonad $HOME/.xmonad
+for f in `ls $DIR/bin/*`; do
+  echo $f
+  ln -s $f $HOME/bin/$(basename $f)
+done
