@@ -37,6 +37,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.rvm/scripts/rvm 
 rvm use 1.9.2 &> /dev/null
 export CLASSPATH="$CLASSPATH:$HOME/.lein/self-installs/leiningen-1.7.1-standalone.jar"
+export CLASSPATH="$CLASSPATH:/usr/share/ant/lib/ant.jar"
 source /usr/local/bin/virtualenvwrapper.sh
 EDITOR=vim
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/lib:/opt/oracle/instantclient_11_2"
