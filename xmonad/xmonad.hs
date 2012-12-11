@@ -23,12 +23,14 @@ import XMonad.Layout.ShowWName
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.UrgencyHook
-import XMonad.Util.EZConfig
+import XMonad.Hooks.DynamicLog
+import XMonad.Actions.UpdateFocus
+import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Run(spawnPipe)
 import Data.Ratio ((%))
 import qualified XMonad.StackSet as W
 import Control.Monad
-
+import System.IO
 {- 
 
   This part is taken from XMonad.Hooks.ICCMFocus. 
@@ -75,9 +77,23 @@ myModMask = mod4Mask -- change the mod key to "super"
 myFocusedBorderColor = "#ff0000" -- focused Window color
 myNormalBorderColor = "#cccccc" -- inactive border color
 myBorderWidth =1 
-myIMRosterTitle = "Contacts"
-myLayout = avoidStruts $ layoutHook defaultConfig
-myLogHook = takeTopFocus
+myLayout = avoidStruts $ onWorkspace "4:Chat" imLayout $ standardLayouts 
+  where
+    standardLayouts = layoutHook defaultConfig
+    imLayout = withIM (1%10) (Role "buddy_list") (standardLayouts)
+
+myLogHook h = dynamicLogWithPP $ dzenPP { ppOutput = hPutStrLn h}
+
+myManageHook = composeAll
+  [
+    className =? "Pidgin" --> doShift "4:Chat"
+    , classNotRole ("Pidgin", "buddy_list") --> doFloat
+  ] 
+  where
+    classNotRole :: (String, String) -> Query Bool
+    classNotRole (c, r) = className =? c <&&> role /=? r
+
+    role = stringProperty "WM_WINDOW_ROLE"
 
 
 myWorkspaces = 
@@ -90,15 +106,18 @@ startupWorkspace = "1:Dev"
 
 
 
-
+statusBarCmd = "dzen2 -bg '#1a1a1a' -fg '#777777' -h 16 -w 1900 -sa c -e '' -fn"
 
 main = do
-  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
-  xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig {
-    startupHook = setWMName "LG3D" -- required for Java Swing applications to run properly
-    , layoutHook = showWName $ myLayout
-    , focusedBorderColor = myFocusedBorderColor
-    , borderWidth = myBorderWidth
-    , modMask = myModMask
-    , logHook = myLogHook
-  } 
+  h <- spawnPipe statusBarCmd
+
+  xmonad $ defaultConfig {
+  startupHook = adjustEventInput >> setWMName "LG3D"  -- required for Java Swing applications to run properly
+  , layoutHook = myLayout
+  , focusedBorderColor = myFocusedBorderColor
+  , borderWidth = myBorderWidth
+  , modMask = myModMask
+  , logHook = dynamicLogWithPP $ defaultPP { ppOutput = hPutStrLn h}
+  , manageHook = myManageHook
+  , handleEventHook = focusOnMouseMove
+  } `additionalKeys` [ ((myModMask .|. shiftMask, xK_z), spawn "gnome-screensaver-command --activate")]

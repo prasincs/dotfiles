@@ -30,6 +30,7 @@ function link_dir {
 
 link_file zsh/zshrc $HOME/.zshrc
 link_dir xmonad $HOME/.xmonad
+link_dir irssi $HOME/.irssi
 for f in `ls $DIR/bin/*`; do
   echo $f
   ln -s $f $HOME/bin/$(basename $f)
