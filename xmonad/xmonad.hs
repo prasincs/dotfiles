@@ -14,10 +14,12 @@
 -}
 
 import XMonad
+import System.Exit
+import XMonad.Config.Gnome
 import XMonad.Layout.Grid
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.IM
-import XMonad.Layout.PerWorkspace (onWorkspace)
+import XMonad.Layout.PerWorkspace
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.ShowWName
 import XMonad.Hooks.ManageDocks
@@ -27,10 +29,21 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Actions.UpdateFocus
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Run(spawnPipe)
+
+import XMonad.Layout.SimpleFloat
+import XMonad.Layout.Spacing
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.NoBorders
+import XMonad.Layout.Gaps
+
+
 import Data.Ratio ((%))
 import qualified XMonad.StackSet as W
+import qualified Data.Map as M
 import Control.Monad
 import System.IO
+import System.Directory
+
 {- 
 
   This part is taken from XMonad.Hooks.ICCMFocus. 
@@ -77,10 +90,12 @@ myModMask = mod4Mask -- change the mod key to "super"
 myFocusedBorderColor = "#ff0000" -- focused Window color
 myNormalBorderColor = "#cccccc" -- inactive border color
 myBorderWidth =1 
-myLayout = avoidStruts $ onWorkspace "4:Chat" imLayout $ standardLayouts 
+myLayout = avoidStruts $ smartBorders tiled ||| smartBorders (Mirror tiled)  ||| noBorders Full ||| smartBorders simpleFloat
   where
-    standardLayouts = layoutHook defaultConfig
-    imLayout = withIM (1%10) (Role "buddy_list") (standardLayouts)
+    tiled   = ResizableTall nmaster delta ratio []
+    nmaster = 1   
+    delta   = 2/100
+    ratio   = 1/2
 
 myLogHook h = dynamicLogWithPP $ dzenPP { ppOutput = hPutStrLn h}
 
@@ -102,22 +117,17 @@ myWorkspaces =
     "6", "7", "8", "9"
   ]
 
+
 startupWorkspace = "1:Dev"
 
+startApps homeDirectory = do
+	spawn $ "sh " ++ homeDirectory ++ "/.xmonad/start-all.sh"
 
-
-statusBarCmd = "dzen2 -bg '#1a1a1a' -fg '#777777' -h 16 -w 1900 -sa c -e '' -fn"
 
 main = do
-  h <- spawnPipe statusBarCmd
-
-  xmonad $ defaultConfig {
-  startupHook = adjustEventInput >> setWMName "LG3D"  -- required for Java Swing applications to run properly
-  , layoutHook = myLayout
-  , focusedBorderColor = myFocusedBorderColor
-  , borderWidth = myBorderWidth
-  , modMask = myModMask
-  , logHook = dynamicLogWithPP $ defaultPP { ppOutput = hPutStrLn h}
-  , manageHook = myManageHook
-  , handleEventHook = focusOnMouseMove
-  } `additionalKeys` [ ((myModMask .|. shiftMask, xK_z), spawn "gnome-screensaver-command --activate")]
+  homeDirectory <- getHomeDirectory
+  startApps homeDirectory 
+  xmonad gnomeConfig {
+     startupHook = adjustEventInput >> setWMName "LG3D"  -- required for Java Swing applications to run properly
+     , modMask = myModMask
+  }
