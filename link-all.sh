@@ -28,6 +28,8 @@ function link_dir {
 }
 
 
+ln -s $DIR/tmux/tmux.conf $HOME/.tmux.conf
+ln -s $DIR/tmux/tmux.shared $HOME/.tmux.shared
 link_file zsh/zshrc $HOME/.zshrc
 link_dir xmonad $HOME/.xmonad
 link_dir irssi $HOME/.irssi

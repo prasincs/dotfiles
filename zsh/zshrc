@@ -36,7 +36,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 source ~/.rvm/scripts/rvm 
 rvm use 1.9.2 &> /dev/null
-export CLASSPATH="$CLASSPATH:$HOME/.lein/self-installs/leiningen-1.7.1-standalone.jar"
+export CLASSPATH="$CLASSPATH:$HOME/.lein/self-installs/leiningen-2.2.0-standalone.jar"
 export CLASSPATH="$CLASSPATH:/usr/share/ant/lib/ant.jar"
 source /usr/local/bin/virtualenvwrapper.sh
 EDITOR=vim
@@ -47,7 +47,8 @@ alias rake='noglob rake'
 HISTSIZE=5000 # session history size
 SAVEHIST=1000 # saved history
 
-PATH=$PATH:/sbin:$HOME/.rvm/bin # Add RVM to PATH for scripting
-ANDROID_SDK_DIR=$HOME/code/sdk/android-sdk-linux_x86
+export PATH=$PATH:/sbin:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export ANDROID_SDK_DIR=$HOME/code/sdk/android-sdk-linux_x86
 
-PATH=$HOME/depot_tools:$PATH:$ANDROID_SDK_DIR/tools:$ANDROID_SDK_DIR/platform-tools
+export PATH=/opt/vagrant/bin:$HOME/depot_tools:$PATH:$ANDROID_SDK_DIR/tools:$ANDROID_SDK_DIR/platform-tools
+export EDITOR=vim
