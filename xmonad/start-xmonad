@@ -1,0 +1,9 @@
+#!/bin/bash
+# 
+# xmonad startup script. Intended to be run from an xsession configuration
+# to run xmonad and some associated programs.
+# 
+# Author: David Brewer
+# Repository: https://github.com/davidbrewer/xmonad-ubuntu-conf
+
+exec xmonad
