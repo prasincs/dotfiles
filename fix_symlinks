@@ -1,0 +1,38 @@
+#!/bin/bash
+#set -x
+TEMP=`mktemp -t xxx.temp` || exit 1
+
+cat >> $TEMP <<EOF
+screenrc $HOME/.screenrc
+bash_profile $HOME/.bash_profile
+bashrc_prasanna $HOME/.bashrc_prasanna
+EOF
+
+
+trim() { echo $1; }
+
+setup ()
+{
+  if [ $# -ne 2 ]; then
+    exit 65;
+  fi
+  if [ -e $2 ]; then
+    echo "$2 exists"
+    if [ -h $2 ]; then
+      echo "$2 is symbolic link, deleting it now"
+      rm $2
+    else
+      echo "not deleting $2, it is a file, make a backup"
+      return 0
+    fi
+  fi
+  echo "Setting up $1 --> $2"
+  ln -s $1 $2
+}
+
+while read line 
+do
+  IFS=' '
+  read -ra PARAMS <<< $line
+  setup $PWD/${PARAMS[0]} ${PARAMS[1]}
+done < $TEMP
