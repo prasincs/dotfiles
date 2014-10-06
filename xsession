@@ -5,4 +5,4 @@
 gnome-panel &
 gnome-settings-daemon &
 #nm-applet &
-xmonad
+#xmonad
