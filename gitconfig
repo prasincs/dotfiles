@@ -1,0 +1,14 @@
+[user]
+  name = Prasanna Gautam
+  email = prasannagautam@gmail.com
+  logallrefupdates=true
+[core]
+  excludesfile = /Users/pgautam/.gitignore_global
+[alias]
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true

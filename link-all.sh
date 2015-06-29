@@ -35,6 +35,8 @@ link_dir xmonad $HOME/.xmonad
 link_dir irssi $HOME/.irssi
 link_file xsession $HOME/.xsession
 link_file emacs $HOME/.emacs
+link_file gitconfig $HOME/.gitconfig
+link_file gitignore_global $HOME/.gitignore_global
 for f in `ls $DIR/bin/*`; do
   echo $f
   ln -s $f $HOME/bin/$(basename $f)
