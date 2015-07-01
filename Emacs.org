@@ -1,0 +1,72 @@
+#+TODO: TODO IN-PROGRESS ERROR NOTE REMINDER DONE
+#+STARTUP: indent
+
+* Common things
+
+** REMINDER Wrapping longlines
+visual-line-mode
+
+
+** REMINDER Searching on Web
+You can use M-x webjump
+It will ask for the site, say DuckDuckGo and search
+** REMINDER Transposing Lines/Swapping Lines
+http://www.gnu.org/software/emacs/manual/html_node/emacs/Transpose.html
+C-x C-t
+** REMINDER Copying s-expression
+C-M-k will copy just the s-expression right next to the cursor
+
+* Org-mode Notes
+
+** Adding a Date
+C-c . Adds the current date like this: <2015-06-24 Wed>
+C-u C-c . Adds the current time too: <2015-06-28 Sun 22:41>
+http://orgmode.org/manual/Creating-timestamps.html#Creating-timestamps
+
+** Display Inline Images
+Images are added with [[/path/to/image.ext]] and they can be displayed by using
+#+BEGIN_SRC emacs
+org-toggle-inline-images
+#+END_SRC
+or
+#+BEGIN_SRC emacs
+C-c C-x C-v
+#+END_SRC
+** Custom Markers for Org-mode
+Add the following as the first line in the file
+#+TODO: TODO IN-PROGRESS WAITING DONE
+Press C-c C-c on that line to refresh the setup (not needed for subsequent loads of the file)
+** Adding a TODO
+
+C-c C-t to add and cycle through the custom ones
+** Ditaa drawings in Org-mode
+You can draw and export nice drawings in org-mode
+http://orgmode.org/worg/org-contrib/babel/languages/ob-doc-ditaa.html
+
+** Cleaner Org-mode
+Add
+
+#+STARTUP: indent
+http://orgmode.org/manual/Clean-view.html#Clean-view
+** REMINDER reloading Org-mode
+press C-c C-c on a line starting with #
+
+* TODO Integrate ditaa for diagrams
+http://ditaa.sourceforge.net/
+
+* TODO Learn Agenda mode for org-mode
+* Artist Mode
+http://www.emacswiki.org/emacs/ArtistMode
+http://www.cinsk.org/emacs/emacs-artist.html
+* Clojure Mode
+
+** Opening Javadoc
+C-c C-d j
+* Clojure-Refactor Mode
+
+** It works by using shortcuts C-c C-m and two letter suffixes
+
+https://github.com/clojure-emacs/clj-refactor.el/wiki
+
+*** Sorting/De-duping namespaces
+C-c C-m s n
