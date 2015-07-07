@@ -1,3 +1,4 @@
+# -*- mode: org; eval: (visual-line-mode 1) -*-
 #+TODO: TODO IN-PROGRESS ERROR NOTE REMINDER DONE
 #+STARTUP: indent
 
@@ -5,8 +6,6 @@
 
 ** REMINDER Wrapping longlines
 visual-line-mode
-
-
 ** REMINDER Searching on Web
 You can use M-x webjump
 It will ask for the site, say DuckDuckGo and search
@@ -15,6 +14,9 @@ http://www.gnu.org/software/emacs/manual/html_node/emacs/Transpose.html
 C-x C-t
 ** REMINDER Copying s-expression
 C-M-k will copy just the s-expression right next to the cursor
+
+** REMINDER Reloading Buffer
+S-u will reload buffer
 
 * Org-mode Notes
 
@@ -58,6 +60,8 @@ http://ditaa.sourceforge.net/
 * Artist Mode
 http://www.emacswiki.org/emacs/ArtistMode
 http://www.cinsk.org/emacs/emacs-artist.html
+** TODO Using artist-mode in org-mode
+It can be useful to add a diagram or such in writing notes.
 * Clojure Mode
 
 ** Opening Javadoc
@@ -70,3 +74,15 @@ https://github.com/clojure-emacs/clj-refactor.el/wiki
 
 *** Sorting/De-duping namespaces
 C-c C-m s n
+* Magit mode
+** Changing Upstream
+
+- Open magit-status window
+
+- Press `P C-u C-u P` to make Magit ask for remote and the branch to use.
+
+- Press just `P C-u P` to only ask for which remote to use.
+
+* Projectile Mode
+** Switching Projects
+`S-p` or projectile-switch-project
