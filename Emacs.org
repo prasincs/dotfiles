@@ -75,6 +75,15 @@ https://github.com/clojure-emacs/clj-refactor.el/wiki
 *** Sorting/De-duping namespaces
 C-c C-m s n
 * Magit mode
+** Shortcuts
+| Shortcut | Description      |
+|----------+------------------|
+| S-i      | magit-status     |
+| k        | discard hunk     |
+| Tab      | Expand a change  |
+| u        | Unstage a change |
+
+
 ** Changing Upstream
 
 - Open magit-status window
