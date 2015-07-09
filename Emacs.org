@@ -1,5 +1,5 @@
 # -*- mode: org; eval: (visual-line-mode 1) -*-
-#+TODO: TODO IN-PROGRESS ERROR NOTE REMINDER DONE
+#+TODO: TODO REMINDER NOTE ERROR DONE
 #+STARTUP: indent
 
 * Common things
