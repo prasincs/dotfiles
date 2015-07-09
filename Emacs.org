@@ -75,6 +75,9 @@ https://github.com/clojure-emacs/clj-refactor.el/wiki
 *** Sorting/De-duping namespaces
 C-c C-m s n
 * Magit mode
+** Cheatsheet
+https://github.com/magit/magit/wiki/Cheatsheet
+
 ** Shortcuts
 | Shortcut | Description      |
 |----------+------------------|
@@ -95,3 +98,4 @@ C-c C-m s n
 * Projectile Mode
 ** Switching Projects
 `S-p` or projectile-switch-project
+`S-P` to switch perspective mode (kills other buffers and switches entirely to new project)
