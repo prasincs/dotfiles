@@ -25,6 +25,8 @@ Emacs has a "kill-ring" that's similar to vim's registers functinality accessibl
 - Press `s -y` to get to it.
 - Navigate to the item in the list and press `i` to insert it.
 - Press `h` to get help
+** Version Control annotation
+Use `M-x vc-annotate`
 * Command Summary
 
 Taken from https://www.cs.rutgers.edu/LCSR-Computing/some-docs/emacs-chart.html
