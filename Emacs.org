@@ -20,6 +20,11 @@ S-u will reload buffer
 
 ** REMINDER Getting help
 `C-h b` shows the keybindings applicable in current buffer
+** Browsing the kill-ring
+Emacs has a "kill-ring" that's similar to vim's registers functinality accessible via `:reg` command.
+- Press `s -y` to get to it.
+- Navigate to the item in the list and press `i` to insert it.
+- Press `h` to get help
 * Command Summary
 
 Taken from https://www.cs.rutgers.edu/LCSR-Computing/some-docs/emacs-chart.html
@@ -195,7 +200,13 @@ https://github.com/magit/magit/wiki/Cheatsheet
 | Tab      | Expand a change  |
 | u        | Unstage a change |
 
-
+** Diffing
+- Magit ediff is actually pretty cool way to manage the diffs once you learn how to
+- Press `e` in any unmerged file
+- The small buffer for taking commands is generally below other buffers
+- Press `p/n` to navigate between the conflicts
+- Pick the options using `A` or `B`
+- Press `q` at the end of if when ediff will ask whether you want to save the file or not.
 ** Changing Upstream
 
 - Open magit-status window
