@@ -29,6 +29,10 @@ Emacs has a "kill-ring" that's similar to vim's registers functinality accessibl
 Use `M-x vc-annotate`
 ** Searching within Project in Prelude
 Make sure ag.el is installed. Then run `C-c p s s` or `S-p s s`
+** Swapping Buffers (Left/Right)
+If you want to swap left and right buffers..
+C-c s
+does that. You need exactly 2 windows to do this.
 * Tricks
 ** Opening Files in remote machines
 
@@ -39,6 +43,9 @@ following:
 #+BEGIN_SRC emacs
 /ssh:<hostname>:filename
 #+END_SRC
+
+** Searching
+This might be Prelude specific.. But C-c g opens Google for searching
 * Command Summary
 
 Taken from https://www.cs.rutgers.edu/LCSR-Computing/some-docs/emacs-chart.html
