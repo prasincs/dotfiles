@@ -27,6 +27,18 @@ Emacs has a "kill-ring" that's similar to vim's registers functinality accessibl
 - Press `h` to get help
 ** Version Control annotation
 Use `M-x vc-annotate`
+** Searching within Project in Prelude
+Make sure ag.el is installed. Then run `C-c p s s` or `S-p s s`
+* Tricks
+** Opening Files in remote machines
+
+The find-file command also supports visiting files in remote machines using a
+=/ssh:= prefix. Enter =C-x C-f=, then in the interactive window, enter the
+following:
+
+#+BEGIN_SRC emacs
+/ssh:<hostname>:filename
+#+END_SRC
 * Command Summary
 
 Taken from https://www.cs.rutgers.edu/LCSR-Computing/some-docs/emacs-chart.html
@@ -219,3 +231,5 @@ https://github.com/magit/magit/wiki/Cheatsheet
 ** Switching Projects
 `S-p p` or projectile-switch-project
 `S-p f` to switch perspective mode (kills other buffers and switches entirely to new project)
+** Searching within Project
+You can use grep but it's really slow.. Use ag using `C-c p s s` or `S-p s s`
