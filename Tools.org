@@ -1,0 +1,17 @@
+* Tools I use
+<2015-08-06 Thu>
+
+fzf: Fuzzy Finder
+tmux
+Emacs with Prelude setup: prasincs/emacs-prelude repository
+zsh with oh-my-zsh
+
+* FZF
+
+** Using the finder
+
+CTRL-J / CTRL-K (or CTRL-N / CTRL-P) to move cursor up and down
+Enter key to select the item, CTRL-C / CTRL-G / ESC to exit
+On multi-select mode (-m), TAB and Shift-TAB to mark multiple items
+Emacs style key bindings
+Mouse: scroll, click, double-click; shift-click and shift-scroll on multi-select mode

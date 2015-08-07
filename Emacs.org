@@ -33,6 +33,13 @@ Make sure ag.el is installed. Then run `C-c p s s` or `S-p s s`
 If you want to swap left and right buffers..
 C-c s
 does that. You need exactly 2 windows to do this.
+** Taking Notes
+M-x remember
+C-c C-c when done
+Saves to emacs.d/notes by default.
+http://sachachua.com/blog/2010/09/new-note-taking-workflow-with-emacs-org-mode/
+** Finding what a shortcut does
+C-h k will open an interactive dialog in mini buffer and ask for the shortcut that it's mapped to.
 * Tricks
 ** Opening Files in remote machines
 
@@ -184,7 +191,9 @@ Add
 http://orgmode.org/manual/Clean-view.html#Clean-view
 ** REMINDER reloading Org-mode
 press C-c C-c on a line starting with #
-
+** Adding a table
+http://orgmode.org/worg/org-tutorials/tables.html
+C-c | and you will be asked for the dimensions of the table.
 * TODO Integrate ditaa for diagrams
 http://ditaa.sourceforge.net/
 

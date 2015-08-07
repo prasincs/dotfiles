@@ -3,7 +3,7 @@
   email = prasannagautam@gmail.com
   logallrefupdates=true
 [core]
-  excludesfile = /Users/pgautam/.gitignore_global
+	excludesfile = /Users/gaupr001/.gitignore_global
 [alias]
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [difftool "sourcetree"]
