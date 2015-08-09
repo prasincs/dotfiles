@@ -243,6 +243,10 @@ https://github.com/magit/magit/wiki/Cheatsheet
 
 - Press 'b u' to get it to ask which upstream to use
 
+** Diffing a Range of Commits
+- Open magit-log
+- Mark start and end of commits
+- Press `d` then press `r`
 * Projectile Mode
 ** Switching Projects
 `S-p p` or projectile-switch-project
