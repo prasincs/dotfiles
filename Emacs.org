@@ -253,3 +253,7 @@ https://github.com/magit/magit/wiki/Cheatsheet
 `S-p f` to switch perspective mode (kills other buffers and switches entirely to new project)
 ** Searching within Project
 You can use grep but it's really slow.. Use ag using `C-c p s s` or `S-p s s`
+* Markdown Mode
+** Cheatsheet
+** Inserting Link
+`C-c C-a l`. It will put the highlighted item in bracket and let you paste the link in parenthesis by default

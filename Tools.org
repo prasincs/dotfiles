@@ -6,6 +6,12 @@ tmux
 Emacs with Prelude setup: prasincs/emacs-prelude repository
 zsh with oh-my-zsh
 
+* Tmux
+
+**  Switching directly to windows from anywhere
+ctrl-b s to get list of all running tmux sessions, Press Space to get list of all windows in sessions
+
+
 * FZF
 
 ** Using the finder
@@ -15,3 +21,8 @@ Enter key to select the item, CTRL-C / CTRL-G / ESC to exit
 On multi-select mode (-m), TAB and Shift-TAB to mark multiple items
 Emacs style key bindings
 Mouse: scroll, click, double-click; shift-click and shift-scroll on multi-select mode
+
+
+** Searching for items using ag and filtering
+
+ag "tmux" | fzf
