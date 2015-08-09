@@ -26,3 +26,12 @@ Mouse: scroll, click, double-click; shift-click and shift-scroll on multi-select
 ** Searching for items using ag and filtering
 
 ag "tmux" | fzf
+
+
+* Perl
+
+** Oneliners printing regex matches
+
+For example: for printing the IP address for a certain interface.
+
+ifconfig | grep -A1 eth1 | perl -lne 'print $1 if /inet addr:(\S+)/'
