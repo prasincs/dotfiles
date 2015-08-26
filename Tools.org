@@ -35,3 +35,10 @@ ag "tmux" | fzf
 For example: for printing the IP address for a certain interface.
 
 ifconfig | grep -A1 eth1 | perl -lne 'print $1 if /inet addr:(\S+)/'
+
+* Shell (Bash/Zsh)
+
+** Deleting words
+
+M-d -> delete the next word |delete
+C-w -> delete the last word delete|

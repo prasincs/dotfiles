@@ -40,6 +40,12 @@ Saves to emacs.d/notes by default.
 http://sachachua.com/blog/2010/09/new-note-taking-workflow-with-emacs-org-mode/
 ** Finding what a shortcut does
 C-h k will open an interactive dialog in mini buffer and ask for the shortcut that it's mapped to.
+** Copy Pasting
+*** Using the kill-ring
+Browsing kill-ring =M-x browse-kill-ring= or =S-y=
+** Getting Help
+You can use ‘C-h m’ for help on the current major mode, and ‘C-h b’ to see all the bindings in effect.
+The symbol identifying the current major mode is stored in the variable major-mode.
 * Tricks
 ** Opening Files in remote machines
 
@@ -257,3 +263,10 @@ You can use grep but it's really slow.. Use ag using `C-c p s s` or `S-p s s`
 ** Cheatsheet
 ** Inserting Link
 `C-c C-a l`. It will put the highlighted item in bracket and let you paste the link in parenthesis by default
+* JS/JSON Mode
+** Using JsonLint
+- Need jsonlint installed
+- (add-hook 'json-mode 'flymake-json-load)
+** Finding path of json object in the current json structure
+- Use json-snatcher which is built into js-mode now
+- Either =M-x jsons-print-path= or =C- C-g=
