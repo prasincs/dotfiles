@@ -44,8 +44,9 @@ C-h k will open an interactive dialog in mini buffer and ask for the shortcut th
 *** Using the kill-ring
 Browsing kill-ring =M-x browse-kill-ring= or =S-y=
 ** Getting Help
-You can use ‘C-h m’ for help on the current major mode, and ‘C-h b’ to see all the bindings in effect.
-The symbol identifying the current major mode is stored in the variable major-mode.
+- You can use ‘C-h m’ for help on the current major mode, and ‘C-h b’ to see all the bindings in effect.
+- The symbol identifying the current major mode is stored in the variable major-mode.
+- Middle Clicking the minor mode will show you the shortcuts for that mode
 * Tricks
 ** Opening Files in remote machines
 
