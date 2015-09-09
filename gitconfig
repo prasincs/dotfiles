@@ -6,6 +6,7 @@
 	excludesfile = /Users/gaupr001/.gitignore_global
 [alias]
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	root = rev-parse --show-toplevel
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

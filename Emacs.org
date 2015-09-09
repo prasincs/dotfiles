@@ -47,6 +47,8 @@ Browsing kill-ring =M-x browse-kill-ring= or =S-y=
 - You can use ‘C-h m’ for help on the current major mode, and ‘C-h b’ to see all the bindings in effect.
 - The symbol identifying the current major mode is stored in the variable major-mode.
 - Middle Clicking the minor mode will show you the shortcuts for that mode
+** Annotating source code in version control (git mostly)
+- Use =vc-annotate= or =C-x v g=
 * Tricks
 ** Opening Files in remote machines
 
@@ -187,6 +189,8 @@ Press C-c C-c on that line to refresh the setup (not needed for subsequent loads
 ** Adding a TODO
 
 C-c C-t to add and cycle through the custom ones
+** Deleting a subtree
+C-c C-x C-w
 ** Ditaa drawings in Org-mode
 You can draw and export nice drawings in org-mode
 http://orgmode.org/worg/org-contrib/babel/languages/ob-doc-ditaa.html
@@ -210,6 +214,11 @@ http://www.emacswiki.org/emacs/ArtistMode
 http://www.cinsk.org/emacs/emacs-artist.html
 ** TODO Using artist-mode in org-mode
 It can be useful to add a diagram or such in writing notes.
+* Dired Mode
+** Opening Dired Mode
+C-x d
+** Deleting files
+Flag the files to delete using d successively and x at the end
 * Clojure Mode
 
 ** Opening Javadoc
@@ -270,4 +279,4 @@ You can use grep but it's really slow.. Use ag using `C-c p s s` or `S-p s s`
 - (add-hook 'json-mode 'flymake-json-load)
 ** Finding path of json object in the current json structure
 - Use json-snatcher which is built into js-mode now
-- Either =M-x jsons-print-path= or =C- C-g=
+- Either =M-x jsons-print-path= or =C-c C-g=
