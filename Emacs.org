@@ -49,6 +49,9 @@ Browsing kill-ring =M-x browse-kill-ring= or =S-y=
 - Middle Clicking the minor mode will show you the shortcuts for that mode
 ** Annotating source code in version control (git mostly)
 - Use =vc-annotate= or =C-x v g=
+** New Files and create intermediate directories
+Create the file with the usual path including the intermediate dirs
+Once the file is open, do =M-x make-directory= and press RET RET
 * Tricks
 ** Opening Files in remote machines
 
@@ -166,7 +169,7 @@ C-x 4 C-f       find-file-other-window	 C-x 4 d  dired-other-window
 C-x 4 .  find-tag-other-window		 C-x 4 f  find-file-other-window
 C-x 4 b  pop-to-buffer			 C-x 4 m  mail-other-window
 
-* Org-mode Notes
+* Org-mode
 
 ** Adding a Date
 C-c . Adds the current date like this: <2015-06-24 Wed>
