@@ -12,6 +12,10 @@ zsh with oh-my-zsh
 ctrl-b s to get list of all running tmux sessions, Press Space to get list of all windows in sessions
 
 
+** Tmuxinator
+
+- Creating New: =tmuxinator new <name>=
+
 * FZF
 
 ** Using the finder
@@ -42,6 +46,13 @@ ifconfig | grep -A1 eth1 | perl -lne 'print $1 if /inet addr:(\S+)/'
 
 M-d -> delete the next word |delete
 C-w -> delete the last word delete|
+
+
+** Fail on first non-zero exit
+Start the script with =/bin/bash -e=
+
+** Get non-zero status if one of the pipe commands fails
+=set -o pipefail=
 
 * Golang
 

@@ -205,9 +205,14 @@ Add
 http://orgmode.org/manual/Clean-view.html#Clean-view
 ** REMINDER reloading Org-mode
 press C-c C-c on a line starting with #
-** Adding a table
+** Table Editing
+Manual: http://orgmode.org/manual/Built_002din-table-editor.html
+*** Adding a table
 http://orgmode.org/worg/org-tutorials/tables.html
 C-c | and you will be asked for the dimensions of the table.
+*** Delete a row
+M-S-<up>     (org-table-kill-row)
+Kill the current row or horizontal line.
 * TODO Integrate ditaa for diagrams
 http://ditaa.sourceforge.net/
 
