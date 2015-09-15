@@ -41,6 +41,16 @@ http://sachachua.com/blog/2010/09/new-note-taking-workflow-with-emacs-org-mode/
 ** Finding what a shortcut does
 C-h k will open an interactive dialog in mini buffer and ask for the shortcut that it's mapped to.
 ** Copy Pasting
+http://www.emacswiki.org/emacs/CopyAndPaste
+
+| Common Name | Common Key | Emacs Name     | Emacs Key |
+|-------------+------------+----------------+-----------|
+| Cut         | C-x, Cmd-x | kill           | C-w       |
+| Copy        | C-c, Cmd-c | kill-ring-save | M-w       |
+| Paste       | C-v, Cmd-v | yank           | C-y       |
+| --          | --         | yank-pop       | M-y       |
+
+
 *** Using the kill-ring
 Browsing kill-ring =M-x browse-kill-ring= or =S-y=
 ** Getting Help
