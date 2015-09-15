@@ -6,6 +6,11 @@ tmux
 Emacs with Prelude setup: prasincs/emacs-prelude repository
 zsh with oh-my-zsh
 
+* Resources on some Fundamentals
+
++ How Keyboard I/O works
+http://unix.stackexchange.com/questions/116629/how-do-keyboard-input-and-text-output-work/116630#116630
+
 * Tmux
 
 **  Switching directly to windows from anywhere
@@ -15,6 +20,12 @@ ctrl-b s to get list of all running tmux sessions, Press Space to get list of al
 ** Tmuxinator
 
 - Creating New: =tmuxinator new <name>=
+
+** FInding window
+
+- Ctrl-b f <window name>
+- Ctrl-b w [Lists all the windows]
+- Ctrl-b s [Lists all the sessions] and on pressing Space, expands to windows
 
 * FZF
 
@@ -41,6 +52,67 @@ For example: for printing the IP address for a certain interface.
 ifconfig | grep -A1 eth1 | perl -lne 'print $1 if /inet addr:(\S+)/'
 
 * Shell (Bash/Zsh)
+
+** Zsh
+
+- Uses zle instead of readline which is lot more powerful
+
+Resources:
++ Reference Card: http://www.bash2zsh.com/zsh_refcard/refcard.pdf
++ http://zshwiki.org/home/zle/bindkeys
+
+*** Keyboard Macros
+
+Although keyboard macros don't work in ZSH in the same way as they do in
+bash, there are still ways to make it work. I was able to find and modify
+a script from http://enki-tech.blogspot.fr/2012/08/zsh-macros.html
+
+to get somewhat workable flow for OSX setup, there are some very specific
+changes that OSX makes to mktemp that weren't accomodated in the script
+
+And, you can use =MX= to execute the last macro as oppose to =e= which is
+mapped to emacs for some reason on my machine.
+
+
+*** Key Bindings
+
+https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/key-bindings.zsh
+
+Finding all the keybindings currently in the shell
+
+=bindkey -L=
+
+To read the keybinding for some key combination.. use the =read= command.
+
+#+BEGIN_SRC
+read
+#+END_SRC
+And press F10, to get
+
+#+BEGIN_SRC
+^[[21~
+#+END_SRC
+
+And so on.
+
+You can use to map particular key sequences to shell functions. For example,
+if you want to map =M-m= to copy the previous word, you can do that using
+#+BEGIN_SRC
+bindkey "^[m" copy-prev-shell-word
+#+END_SRC
+
+** Bash
+
+*** Keyboard Macros
+
+Unfortunately zsh doesn't seem to support this
+
+You can add a keyboard macro by typing C-x ( <commands> C-x )
+and then replay it using C-x e
+
+*** Editing
+
+http://www.scribd.com/doc/985254/Bash-Emacs-Editing-Mode-readline-Cheat-Sheet
 
 ** Deleting words
 

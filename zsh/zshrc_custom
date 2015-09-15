@@ -1,0 +1,27 @@
+cdUndoKey() {
+    popd      > /dev/null
+    zle       reset-prompt
+    echo
+    ls
+    echo
+
+}
+
+cdParentKey() {
+    pushd .. > /dev/null
+    zle      reset-prompt
+    echo
+    ls
+    echo
+
+}
+
+zle -N                 cdParentKey
+zle -N                 cdUndoKey
+# Use Alt-Left to go back to last directory
+# And Alt-Up to go to the parent directory
+# Works in OSX
+bindkey '^[^[[D' cdUndoKey
+bindkey '^[^[[A' cdParentKey
+setopt prompt_subst
+RPROMPT='$(zmacros_info_wrapper)'
