@@ -43,6 +43,13 @@ Mouse: scroll, click, double-click; shift-click and shift-scroll on multi-select
 ag "tmux" | fzf
 
 
+** Allowing extended search/selection
+
+Add the following environment variable
+
+export FZF_DEFAULT_OPTS=--extended
+
+
 * Perl
 
 ** Oneliners printing regex matches
@@ -101,7 +108,15 @@ if you want to map =M-m= to copy the previous word, you can do that using
 bindkey "^[m" copy-prev-shell-word
 #+END_SRC
 
+*** Removing duplicates from history
+
+awk -i inplace '!x[$0]++' ~/.zsh_history
+
 ** Bash
+
+*** Style Guides
+
+http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
 *** Keyboard Macros
 

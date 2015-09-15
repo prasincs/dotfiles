@@ -176,6 +176,10 @@ C-c . Adds the current date like this: <2015-06-24 Wed>
 C-u C-c . Adds the current time too: <2015-06-28 Sun 22:41>
 http://orgmode.org/manual/Creating-timestamps.html#Creating-timestamps
 
+You can use Shift-Up and Shift-Down, etc keys to change the days by default
+but because this conflicts with existing keys for moving around buffers,
+it's overridden..
+
 ** Display Inline Images
 Images are added with [[/path/to/image.ext]] and they can be displayed by using
 #+BEGIN_SRC emacs
