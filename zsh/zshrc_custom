@@ -25,3 +25,5 @@ bindkey '^[^[[D' cdUndoKey
 bindkey '^[^[[A' cdParentKey
 setopt prompt_subst
 RPROMPT='$(zmacros_info_wrapper)'
+
+alias mux=tmuxinator

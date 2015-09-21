@@ -261,12 +261,12 @@ C-c C-m s n
 https://github.com/magit/magit/wiki/Cheatsheet
 
 ** Shortcuts
-| Shortcut | Description      |
-|----------+------------------|
-| S-i      | magit-status     |
-| k        | discard hunk     |
-| Tab      | Expand a change  |
-| u        | Unstage a change |
+| Shortcut   | Description      |
+|------------+------------------|
+| S-i, C-x g | magit-status     |
+| k          | discard hunk     |
+| Tab        | Expand a change  |
+| u          | Unstage a change |
 
 ** Diffing
 - Magit ediff is actually pretty cool way to manage the diffs once you learn how to
@@ -302,3 +302,6 @@ You can use grep but it's really slow.. Use ag using `C-c p s s` or `S-p s s`
 ** Finding path of json object in the current json structure
 - Use json-snatcher which is built into js-mode now
 - Either =M-x jsons-print-path= or =C-c C-g=
+* Perspective Mode
+- keeps workspaces for different projects
+Prefixes C-x x
