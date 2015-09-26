@@ -240,7 +240,10 @@ It can be useful to add a diagram or such in writing notes.
 ** Opening Dired Mode
 C-x d
 ** Deleting files
-Flag the files to delete using d successively and x at the end
+Flag the files to delete using d successively and x at the en
+* Evil Mode
+** Toggling
+=C-z= toggles evil-mode on and off when you run into conflicts
 * Clojure Mode
 
 ** Opening Javadoc
