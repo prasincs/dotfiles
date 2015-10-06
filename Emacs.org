@@ -33,6 +33,8 @@ Make sure ag.el is installed. Then run `C-c p s s` or `S-p s s`
 If you want to swap left and right buffers..
 C-c s
 does that. You need exactly 2 windows to do this.
+** back to indentation
+M-m (not the same as C-a which goes back to beginning of the line)
 ** Taking Notes
 M-x remember
 C-c C-c when done
@@ -227,10 +229,10 @@ C-c | and you will be asked for the dimensions of the table.
 *** Delete a row
 M-S-<up>     (org-table-kill-row)
 Kill the current row or horizontal line.
-* TODO Integrate ditaa for diagrams
-http://ditaa.sourceforge.net/
 
-* TODO Learn Agenda mode for org-mode
+** TODO Learn Agenda mode for org-mode
+** TODO Integrate ditaa for diagrams
+http://ditaa.sourceforge.net/
 * Artist Mode
 http://www.emacswiki.org/emacs/ArtistMode
 http://www.cinsk.org/emacs/emacs-artist.html
@@ -308,3 +310,5 @@ You can use grep but it's really slow.. Use ag using `C-c p s s` or `S-p s s`
 * Perspective Mode
 - keeps workspaces for different projects
 Prefixes C-x x
+* References
+http://cse.unl.edu/~choueiry/S08-476-876/Documents/emacs_ref.html

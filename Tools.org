@@ -156,3 +156,8 @@ sudo GOOS=linux GOARCH=386 CGO_ENABLED=0 ./make.bash
 git config --global alias.root "rev-parse --show-toplevel"
 
 Then you can use git root to go to the top directory from anywhere
+* Apt
+** Finding more about the package repository
+apt-cache madison <packagename>
+
+will show you all the available package versions in the repositories.
