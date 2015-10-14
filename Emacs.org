@@ -231,6 +231,8 @@ M-S-<up>     (org-table-kill-row)
 Kill the current row or horizontal line.
 
 ** TODO Learn Agenda mode for org-mode
+http://doc.norang.ca/org-mode.html#OrgFiles
+
 ** TODO Integrate ditaa for diagrams
 http://ditaa.sourceforge.net/
 * Artist Mode
