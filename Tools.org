@@ -27,6 +27,21 @@ ctrl-b s to get list of all running tmux sessions, Press Space to get list of al
 - Ctrl-b w [Lists all the windows]
 - Ctrl-b s [Lists all the sessions] and on pressing Space, expands to windows
 
+** Fullscreen
+:resize-pane -Z
+
+If you switch to another pane, it will minimize itself
+** Color palette
+http://superuser.com/questions/285381/how-does-the-tmux-color-palette-work
+
+Listing available colors in tmux
+
+#+BEGIN_SRC
+for i in {0..255} ; do
+    printf "\x1b[38;5;${i}mcolour${i}\n"
+done
+#+END_SRC
+
 * FZF
 
 ** Using the finder
@@ -163,3 +178,9 @@ apt-cache madison <packagename>
 will show you all the available package versions in the repositories.
 * Byobu
 https://gist.github.com/jshaw/5255721
+* Networking
+- Latency times between large cities
+https://wondernetwork.com/pings/
+
+* Latency
+http://computers-are-fast.github.io/
