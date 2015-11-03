@@ -157,6 +157,7 @@ Start the script with =/bin/bash -e=
 =set -o pipefail=
 
 * Golang
+http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/
 
 ** Setting up Cross compiling
 
@@ -165,12 +166,15 @@ Go to where go source is. Generally at /usr/local/go/src
 Then compile for the target.
 
 sudo GOOS=linux GOARCH=386 CGO_ENABLED=0 ./make.bash
+
 * Git
 ** Get to root level
 
 git config --global alias.root "rev-parse --show-toplevel"
 
 Then you can use git root to go to the top directory from anywhere
+** Branching Model
+http://nvie.com/posts/a-successful-git-branching-model/
 * Apt
 ** Finding more about the package repository
 apt-cache madison <packagename>
@@ -184,3 +188,7 @@ https://wondernetwork.com/pings/
 
 * Latency
 http://computers-are-fast.github.io/
+* OSX
+** Making a RAM Disk
+Size => Size of Disk in MB * 2048
+diskutil erasevolume HFS+ 'RAM Disk' `hdiutil attach -nomount ram://8388608`
