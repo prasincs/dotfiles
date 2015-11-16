@@ -77,6 +77,11 @@ following:
 
 ** Searching
 This might be Prelude specific.. But C-c g opens Google for searching
+** Opening buffer with content from URL
+-- Specific to Prelude
+C-c u
+and enter the URL in interactive mode
+Then you can save contents from that URL to any other local file.
 * Command Summary
 
 Taken from https://www.cs.rutgers.edu/LCSR-Computing/some-docs/emacs-chart.html
