@@ -20,6 +20,15 @@ S-u will reload buffer
 
 ** REMINDER Getting help
 `C-h b` shows the keybindings applicable in current buffer
+** Indenting
+pressing tab in the line should indent individual lines
+If you are editing Lisp, going to the beginning of the expression
+and pressing C-M-q should reindent all the lines within the parenthesis
+http://www.gnu.org/software/emacs/manual/html_node/emacs/Multi_002dline-Indent.html
+** Going back to last location of cursor
+C-x C-x will take back to last location with mark
+C-u C-Spc will take back to last location without mark
+(Similar to `` in vi)
 ** Browsing the kill-ring
 Emacs has a "kill-ring" that's similar to vim's registers functinality accessible via `:reg` command.
 - Press `s -y` to get to it.
@@ -82,6 +91,9 @@ This might be Prelude specific.. But C-c g opens Google for searching
 C-c u
 and enter the URL in interactive mode
 Then you can save contents from that URL to any other local file.
+** Dot mode (like vim) -- AKA repeating commands
+https://github.com/wyrickre/dot-mode/blob/master/dot-mode.el
+Then use =C-.= to use dot mode like vim
 * Command Summary
 
 Taken from https://www.cs.rutgers.edu/LCSR-Computing/some-docs/emacs-chart.html
@@ -287,6 +299,17 @@ https://github.com/magit/magit/wiki/Cheatsheet
 - Press `p/n` to navigate between the conflicts
 - Pick the options using `A` or `B`
 - Press `q` at the end of if when ediff will ask whether you want to save the file or not.
+** Resolving Merge Conflicts
+Use smerge* family of commands and look at C-c ^ family of shortcuts
+
+| shortcut | action             |
+|----------+--------------------|
+| C-c ^ n  | Next               |
+| C-c ^ p  | Previous           |
+| C-c ^ m  | Pick My changes    |
+| C-c ^ o  | Pick other changes |
+
+
 ** Changing Upstream
 
 - Open magit-status window
@@ -318,4 +341,4 @@ You can use grep but it's really slow.. Use ag using `C-c p s s` or `S-p s s`
 - keeps workspaces for different projects
 Prefixes C-x x
 * References
-http://cse.unl.edu/~choueiry/S08-476-876/Documents/emacs_ref.html
+http://cse.unl.edu/~choueiry/S08-476-876/Documents/emacs_ref.htm
