@@ -73,6 +73,8 @@ Browsing kill-ring =M-x browse-kill-ring= or =S-y=
 ** New Files and create intermediate directories
 Create the file with the usual path including the intermediate dirs
 Once the file is open, do =M-x make-directory= and press RET RET
+** Rpeating Strings using macros
+http://stackoverflow.com/questions/17894167/emacs-repeat-string-n-times
 * Tricks
 ** Opening Files in remote machines
 
@@ -225,6 +227,8 @@ Press C-c C-c on that line to refresh the setup (not needed for subsequent loads
 ** Adding a TODO
 
 C-c C-t to add and cycle through the custom ones
+** Changing the type of list
+Shift-Left or Right to change from - to + to numbers, etc
 ** Deleting a subtree
 C-c C-x C-w
 ** Ditaa drawings in Org-mode

@@ -192,3 +192,7 @@ http://computers-are-fast.github.io/
 ** Making a RAM Disk
 Size => Size of Disk in MB * 2048
 diskutil erasevolume HFS+ 'RAM Disk' `hdiutil attach -nomount ram://8388608`
+* Clojure
+;; Reload everything
+(require '[clojure.tools.namespace.repl :refer [refresh]])
+(refresh)
