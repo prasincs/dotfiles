@@ -1,0 +1,20 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "cmd+l",
+        "command": "workbench.action.gotoLine"
+    }
+    ,
+    {
+        "key": "ctrl+x t",
+        "command": "go.test.cursor"
+    },
+    {
+        "key": "ctrl+x f",
+        "command": "go.test.file"
+    },
+    {
+        "key": "ctrl+x p",
+        "command": "go.test.package"
+    }
+]
