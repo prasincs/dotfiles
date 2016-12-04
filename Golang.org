@@ -1,0 +1,10 @@
+* Tools
+This is old
+https://dominik.honnef.co/posts/2014/12/go-tools/
+More updated
+https://github.com/avelino/awesome-go
+* Generics
+- https://clipperhouse.github.io/gen/
+** Interfaces
+
+https://github.com/rjeczalik/interfaces

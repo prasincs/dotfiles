@@ -344,5 +344,7 @@ You can use grep but it's really slow.. Use ag using `C-c p s s` or `S-p s s`
 * Perspective Mode
 - keeps workspaces for different projects
 Prefixes C-x x
+* Go Mode
+
 * References
 http://cse.unl.edu/~choueiry/S08-476-876/Documents/emacs_ref.htm
