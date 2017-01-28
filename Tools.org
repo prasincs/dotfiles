@@ -42,6 +42,8 @@ for i in {0..255} ; do
 done
 #+END_SRC
 
+** Copying with mouse
+Press Option for selecting -- no more need for switching to copy mode, etc
 * FZF
 
 ** Using the finder
