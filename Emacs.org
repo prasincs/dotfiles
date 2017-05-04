@@ -201,7 +201,7 @@ C-x 4 .  find-tag-other-window		 C-x 4 f  find-file-other-window
 C-x 4 b  pop-to-buffer			 C-x 4 m  mail-other-window
 
 * Org-mode
-
+http://ehneilsen.net/notebook/orgExamples/org-examples.html
 ** Adding a Date
 C-c . Adds the current date like this: <2015-06-24 Wed>
 C-u C-c . Adds the current time too: <2015-06-28 Sun 22:41>
