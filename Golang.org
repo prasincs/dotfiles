@@ -3,6 +3,12 @@ This is old
 https://dominik.honnef.co/posts/2014/12/go-tools/
 More updated
 https://github.com/avelino/awesome-go
+** Gogland
+If you have a case sensitive filesystem in OSX, you want to set
+
+idea.case.sensitive.fs=true
+in
+~/Library/Preferences/Gogland1.0/idea.properties
 * Generics
 - https://clipperhouse.github.io/gen/
 ** Interfaces

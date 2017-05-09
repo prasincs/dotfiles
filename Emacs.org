@@ -256,6 +256,10 @@ http://doc.norang.ca/org-mode.html#OrgFiles
 
 ** TODO Integrate ditaa for diagrams
 http://ditaa.sourceforge.net/
+* Rectangular Selection
+- C-x SPC or rectangular-mark-mode
+** Deleting from region
+- C-x r d after selection
 * Artist Mode
 http://www.emacswiki.org/emacs/ArtistMode
 http://www.cinsk.org/emacs/emacs-artist.html
