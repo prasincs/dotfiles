@@ -53,3 +53,5 @@ crashlytics.properties
 crashlytics-build.properties
 etc/dev/furtive.clj
 *.sw[a-z]
+
+.markdown-preview.html

@@ -201,3 +201,6 @@ diskutil erasevolume HFS+ 'RAM Disk' `hdiutil attach -nomount ram://8388608`
 * Ghostscript
 Reducing the size of pdf without sacrificing too much quality
 gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -sOutputFile=output.pdf input.pdf
+* VS Code
+- Search for files by name = > Cmd+P or Ctrl+P
+- You can put   "proxy": "http://localhost:8080" in package.json to avoid CORS issues while developing (https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)
