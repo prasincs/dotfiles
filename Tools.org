@@ -204,3 +204,18 @@ gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/e
 * VS Code
 - Search for files by name = > Cmd+P or Ctrl+P
 - You can put   "proxy": "http://localhost:8080" in package.json to avoid CORS issues while developing (https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)
+* Terminator
+
+Documentation: https://wiki.archlinux.org/index.php/Terminator
+These are for XMonad setup
+
+Ctrl+Shift+X => Focus screen
+F11 Toggle fullscreen
+Ctrl + Shift + O Split terminals horizontally
+Ctrl + Shift + E Split terminals vertically
+Ctrl + Shift + W Close current Panel
+Ctrl + Shift + T Open new tab (Doesn't work in focus mode)
+Alt + ↑ Move to the terminal above the current one
+Alt + ↓ Move to the terminal below the current one
+Alt + ← Move to the terminal left of the current one
+Alt + → Move to the terminal right of the current one
