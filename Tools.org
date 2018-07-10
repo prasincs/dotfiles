@@ -169,6 +169,9 @@ Then compile for the target.
 
 sudo GOOS=linux GOARCH=386 CGO_ENABLED=0 ./make.bash
 
+** Profiling & Benchmarking
+go test -bench=. -cpuprofile=cpu.out
+go test -bench=. -memprofile=mem.out
 * Git
 ** Get to root level
 
