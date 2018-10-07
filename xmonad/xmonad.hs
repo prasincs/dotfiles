@@ -1,133 +1,76 @@
-{-
-  This is my XMonad file, there are many like it, but this one is mine.
-  
-  If you want to customize this file, the easiest workflow goes
-  something like this:
-    1. Make a small change.
-    2. Hit "super-q", which recompiles and restarts xmonad
-    3. If there is an error, undo your change and hit "super-q" again to
-       get to a stable place again.
-    4. Repeat
+module Main where
 
-  Author: Prasanna Gautam
-
--}
 
 import XMonad
-import System.Exit
 import XMonad.Config.Gnome
-import XMonad.Layout.Grid
-import XMonad.Layout.ResizableTile
-import XMonad.Layout.IM
-import XMonad.Layout.PerWorkspace
-import XMonad.Hooks.SetWMName
-import XMonad.Layout.ShowWName
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.ManageHelpers
-import XMonad.Hooks.UrgencyHook
+import XMonad.Util.Paste
+import XMonad.Util.EZConfig
 import XMonad.Hooks.DynamicLog
-import XMonad.Actions.UpdateFocus
-import XMonad.Util.EZConfig(additionalKeys)
-import XMonad.Util.Run(spawnPipe)
-
-import XMonad.Layout.SimpleFloat
-import XMonad.Layout.Spacing
-import XMonad.Layout.ResizableTile
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageHelpers
+import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
-import XMonad.Layout.Gaps
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.Grid
+import XMonad.Layout.Circle
+import XMonad.Layout.Tabbed
+import XMonad.Hooks.ManageDocks
 
 
-import Data.Ratio ((%))
-import qualified XMonad.StackSet as W
-import qualified Data.Map as M
-import Control.Monad
-import System.IO
-import System.Directory
+main :: IO ()
+myConfig = gnomeConfig {
+     modMask = mod4Mask --windows key
+     , terminal = "terminator"
+     , focusFollowsMouse = False
 
-{- 
-
-  This part is taken from XMonad.Hooks.ICCMFocus. 
-  xmonad-contrib seems to be broken for some Ubuntu versions
-
--}
-atom_WM_TAKE_FOCUS ::
-  X Atom
-
-atom_WM_TAKE_FOCUS =
-  getAtom "WM_TAKE_FOCUS"
-
-takeFocusX :: 
-  Window
-  -> X()
-
-takeFocusX w =
-  withWindowSet . const $ do
-    dpy       <- asks display
-    wmtakef   <- atom_WM_TAKE_FOCUS
-    wmprot    <- atom_WM_PROTOCOLS
-    protocols <- io $ getWMProtocols dpy w
-    when (wmtakef `elem` protocols) $
-      io . allocaXEvent $ \ev -> do
-          setEventType ev clientMessage
-          setClientMessageEvent ev w wmprot 32 wmtakef currentTime
-          sendEvent dpy w False noEventMask ev
-
-takeTopFocus :: 
-  X()
-
-takeTopFocus = 
-  (withWindowSet $ maybe (setFocusX =<< asks theRoot) takeFocusX . W.peek) >> setWMName "LG3D"  
-
-{- end stuff from ICCCMFocus -}
+     -- hooks layouts
+     , manageHook = manageDocks <+> manageHook gnomeConfig
+     , layoutHook = avoidStruts $ myLayout
+} `additionalKeys` myKeys
 
 
-{- 
-  XMonad configuration variables
-  
--}
+------------------------------------------------------------------------
+-- Layouts:
 
-myModMask = mod4Mask -- change the mod key to "super"
-myFocusedBorderColor = "#ff0000" -- focused Window color
-myNormalBorderColor = "#cccccc" -- inactive border color
-myBorderWidth =1 
-myLayout = avoidStruts $ smartBorders tiled ||| smartBorders (Mirror tiled)  ||| noBorders Full ||| smartBorders simpleFloat
+-- You can specify and transform your layouts by modifying these values.
+-- If you change layout bindings be sure to use 'mod-shift-space' after
+-- restarting (with 'mod-q') to reset your layout state to the new
+-- defaults, as xmonad preserves your old layout settings by default.
+--
+-- The available layouts.  Note that each layout is separated by |||,
+-- which denotes layout choice.
+--
+myResizable = ResizableTall 1 (3/100) (1/2) []
+
+
+myLayout
+    = tiled
+    ||| myResizable
+---    ||| FixedColumn 1 20 84 10
+    ||| Full
+    ||| Grid
+    ||| simpleTabbed
+    ||| Circle
   where
-    tiled   = ResizableTall nmaster delta ratio []
-    nmaster = 1   
-    delta   = 2/100
-    ratio   = 1/2
+     -- default tiling algorithm partitions the screen into two panes
+     tiled   = Tall nmaster delta ratio
+     -- The default number of windows in the master pane
+     nmaster = 1
+     -- Default proportion of screen occupied by# master pane
+     ratio   = 1/2
+     -- Percent of screen to increment by when resizing panes
+     delta   = 3/100
 
-myLogHook h = dynamicLogWithPP $ dzenPP { ppOutput = hPutStrLn h}
+-- Note: https://wiki.archlinux.org/index.php/Keyboard_shortcuts
+myKeys =
+    -- use Win-x rather than Win-p for gnomeRun to work around this bug:
+    -- http://ubuntuforums.org/showthread.php?t=2158104&p=12859037#post12859037
+    [   ((mod4Mask,       xK_x),            gnomeRun)
+    -- because Win+L locks screen and I like that actually
+      , ((mod4Mask,       xK_a),            sendMessage Shrink)
+      , ((mod4Mask,       xK_z),            sendMessage Expand)
+    -- X-selection-paset Buffer
+      , ((0,                     xK_Insert), pasteSelection)
+    ]
 
-myManageHook = composeAll
-  [
-    className =? "Pidgin" --> doShift "4:Chat"
-    , classNotRole ("Pidgin", "buddy_list") --> doFloat
-  ] 
-  where
-    classNotRole :: (String, String) -> Query Bool
-    classNotRole (c, r) = className =? c <&&> role /=? r
-
-    role = stringProperty "WM_WINDOW_ROLE"
-
-
-myWorkspaces = 
-  [ "0:Debug", "1:Dev", "2:Web",
-    "3:VM", "4:Chat", "5",
-    "6", "7", "8", "9"
-  ]
-
-
-startupWorkspace = "1:Dev"
-
-startApps homeDirectory = do
-	spawn $ "sh " ++ homeDirectory ++ "/.xmonad/start-all.sh"
-
-
-main = do
-  homeDirectory <- getHomeDirectory
-  startApps homeDirectory 
-  xmonad gnomeConfig {
-     startupHook = adjustEventInput >> setWMName "LG3D"  -- required for Java Swing applications to run properly
-     , modMask = myModMask
-  }
+main = xmonad $ myConfig
