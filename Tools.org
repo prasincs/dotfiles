@@ -280,3 +280,10 @@ mod-button3  Set the window to floating mode and resize by dragging
 * Wget
 ** Downloading recursive with follow links
 wget -b -o wget.log --level=10 --recursive --convert-links --random-wait --exclude-domains twitter.com,gravatar.com -H --domains blog.acolyer.org adriancolyer.files.wordpress.com https://blog.acolyer.org
+* Scanning
+xsane exports to PNM
+** Combine pnm files to pdf
+
+needs graphicsmagick
+
+/usr/bin/gm convert *.pnm output.pdf
